@@ -41,15 +41,15 @@ exports.percentile = function (percentile, data) {
 		console.log("i", i);
 		// i 5
 
-		fraction = index - i;
-		// 5.4 - 5
+		fraction = Math.ceil(index) - i;
+		// 6 - 5
 		console.log("fraction", fraction);
 		// fraction 0.40000000000000036
 
 		console.log("data[i]", data[i]);
 		console.log("data[i + 1]", data[i + 1]);
-		result = data[i] + (data[i + 1] - data[i]) * fraction;
-		// 7 +   (9 - 7) * 0.4
+		result = [data[i] + (data[i + 1] - data[i]) * fraction];
+		// 7 +   (9 - 7) * 1
 	}
 	return result;
 };

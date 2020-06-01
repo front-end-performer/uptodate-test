@@ -1,9 +1,7 @@
-const subject = require ('.'); 
- 
-describe('Percentile', () => {
+const subject = require(".");
 
-    it('should return 90 percentile for the array of integers', () => {
-        expect(subject.percentile(90, [1, 3, 7, 5, 9, 5, 2])).toEqual([9]);
-    });
-
+describe("Percentile", () => {
+	it("should return 90 percentile for the array of integers", () => {
+		expect(subject.percentile(90, [1, 3, 7, 5, 9, 5, 2])).toEqual([9]);
+	});
 });
