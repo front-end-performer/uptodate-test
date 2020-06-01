@@ -24,32 +24,24 @@ exports.percentile = function (percentile, data) {
 	data.sort(sortNumber);
 
 	console.log("data", data);
-	// data [1, 2, 3, 5, 5, 7, 9]
 
 	index = (percentile / 100) * (data.length - 1);
 
 	console.log("index", index);
-	// index 5.4
 
 	if (Math.floor(index) == index) {
 		result = data[index];
-		//
 	} else {
-		//5.4
 		i = Math.floor(index);
 
 		console.log("i", i);
-		// i 5
 
 		fraction = Math.ceil(index) - i;
-		// 6 - 5
 		console.log("fraction", fraction);
-		// fraction 0.40000000000000036
 
 		console.log("data[i]", data[i]);
 		console.log("data[i + 1]", data[i + 1]);
 		result = [data[i] + (data[i + 1] - data[i]) * fraction];
-		// 7 +   (9 - 7) * 1
 	}
 	return result;
 };
