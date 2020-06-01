@@ -7,18 +7,17 @@
 
 exports.minMax = function (data) {
 	//TODO implement me
-	const arr = [10, 4, 5, 7, 99, 1];
 
-	var lg = arr[0];
-	var sm = arr[0];
+	var lg = data[0];
+	var sm = data[0];
 
-	for (var i = 1; i < arr.length; i++) {
-		if (arr[i] > lg) {
-			lg = arr[i];
-		} else if (arr[i] < sm) {
-			sm = arr[i];
+	for (var i = 1; i < data.length; i++) {
+		if (data[i] > lg) {
+			lg = data[i];
+		} else if (data[i] < sm) {
+			sm = data[i];
 		}
 	}
 
-	return [{ min: sm, max: lg }];
+	return { min: sm, max: lg };
 };
