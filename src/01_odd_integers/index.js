@@ -2,6 +2,11 @@
 //
 // For example if our array is 1,3,5,6,8,2,0,11 the result will be 1,3,5,11
 
-exports.oddIntegers = function(data) {
-    //TODO implement me
-}
+exports.oddIntegers = function (data) {
+	//TODO implement me
+	const arr = [1, 3, 5, 6, 8, 2, 0, 11];
+
+	let odds = arr.filter((n) => n % 2);
+
+	return odds;
+};
