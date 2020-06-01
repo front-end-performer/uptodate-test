@@ -17,13 +17,18 @@
 
 exports.percentile = function (percentile, data) {
 	//TODO implement me
-	// console.log(percentile, data);
-	let index;
-	sort(data);
-	index = (percentile / 100) * count(data) - 1;
-	if (floor(index) == index) {
-		return data[index];
-	} else {
-		return (data[floor(index)] + data[ceiling(index)]) / 2;
+	function sortNumber(a, b) {
+		return a - b;
 	}
+
+	data.sort(sortNumber);
+	index = (percentile / 100) * (data.length - 1);
+	if (Math.floor(index) == index) {
+		result = data[index];
+	} else {
+		i = Math.floor(index);
+		fraction = index - i;
+		result = data[i] + (data[i + 1] - data[i]) * fraction;
+	}
+	return result;
 };
