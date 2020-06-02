@@ -14,6 +14,10 @@ exports.overlappingSpreads = function (data) {
 		.sort((a, b) => a - b)
 		.map((n, i, r) => n === r[i + 1] && n)
 		.reduce((a, b) => a + b);
-
 	return r;
 };
+
+// 1.[[-4, -2], [4, 6], [7, 9], [-2, 0], [5, 7], [10, 12]] map()
+// 2.[-4, -2, 4, 6, 7, 9, -2, 0, 5, 7, 10, 12] flat()
+// 3.[-4, -2, -2, 0, 4, 5, 6, 7, 7, 9, 10, 12] sort()
+// 4[false, -2, false, false, false, false, false, 7, false, false, false, false] map()
